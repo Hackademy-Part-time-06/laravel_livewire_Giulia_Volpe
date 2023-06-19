@@ -27,7 +27,7 @@ class TaskEditForm extends Component
             'title' => $this->title,
             'description' => $this->description
         ]);
-
+        
         session()->flash('tasks', 'Task successfully updated.');
         return redirect()->route('tasks.index')->with('success', 'Task aggiunta con successo!');
     }

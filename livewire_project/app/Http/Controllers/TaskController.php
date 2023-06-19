@@ -24,43 +24,23 @@ class TaskController extends Controller
         return view('tasks.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store()
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Task $task)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Task $task)
     {
-        //
+        return view('tasks.edit', compact('task'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Task $task)
-    {
-        //
-    }
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Task $task)
     {
-        //
+        $task->delete();
+        session()->flash('tasks', 'Task successfully deleted.');
     }
 }
